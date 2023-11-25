@@ -1,9 +1,12 @@
-# Final Project-Used Car Predicton
+# Libray for used car prediction
 
-This project is predction of used car
+ This is library build for used car prediction.
+ used car prediction contains 3 procedures.
+ understand data-> clean data-> compute data
 
-Our project is preparing data, cleaning data and computing data in the end.
+We therefore destruct the related operations and construct the functions accordingly, also removed duplications.
 
-We first build function to each operation blocks and remove dupilcation. 
-After that, we refactory functions to classes 
-and then build entire unittest to make sure the desired behavior.
+Then, we refactory functions to classes and followed by <h3>principle from computing for data science class<\h3>.
+data_preprocess;features;model;
+
+in the end there will be unittes.
