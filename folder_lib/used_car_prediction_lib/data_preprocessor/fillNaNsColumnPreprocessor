@@ -1,0 +1,4 @@
+import preprocessor
+class FillNaNsColumnPreprocessor(preprocessor.Preprocessor):
+    def preprocess(train_data, columns):
+        return train_data[columns].fillna(train_data[columns].mean)

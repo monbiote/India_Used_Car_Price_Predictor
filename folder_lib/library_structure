@@ -1,0 +1,24 @@
+
+
+
+
+library_folder/
+├── LICENSE
+├── README.md
+├── setup.cfg
+├── setup.py
+├── requirements.txt
+├── library_name/
+│     ├── __init__.py
+│     └── subfolder/
+│         ├── __init__.py
+│         └── yet_another_python_file.py
+│     ├──subfolder/
+│         ├──__init__.py
+│         └──
+│     ├──subfolder/
+│         ├──__init__.py
+│         └──
+└── tests/
+
+
