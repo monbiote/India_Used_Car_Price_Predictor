@@ -6,7 +6,7 @@
 
 We therefore destruct the related operations and construct the functions accordingly, also removed duplications.
 
-Then, we refactory functions to classes and followed by <h3>principle from computing for data science class<\h3>.
+Then, we refactory functions to classes and followed by <h3>principle from computing for data science class</h3>.
 data_preprocess;features;model;
 
 in the end there will be unittes.
