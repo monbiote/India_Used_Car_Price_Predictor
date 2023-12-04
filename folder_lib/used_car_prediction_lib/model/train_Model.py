@@ -7,7 +7,7 @@ class Train_Model:
     class of model for training and prediction
     """
     # each time construct, increase by 1
-    mordel_Construct_Instance_Counter = 0
+    model_Construct_Instance_Counter = 0
 
     def __init__(self, feature_columns, target_columns, hyperparameters=None):
             
@@ -20,9 +20,9 @@ class Train_Model:
         """
         self.feature_columns = feature_columns
         self.target_columns = target_columns
-        self.model = RandomForestClassifier(**hyperparameters)
+        self.model = RandomForestClassifier(**hyperparameters if hyperparameters else {})
 
-        self.mordel_Construct_Instance_Counter += 1
+        self.model_Construct_Instance_Counter += 1
 
     def train(self, train_data):
         """

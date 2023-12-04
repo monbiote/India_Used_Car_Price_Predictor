@@ -30,7 +30,7 @@ class NormalizationTransformator(Transformator):
         return data
 
 
-class StandarizationTransformator(Transformator):
+class StandardizationTransformator(Transformator):
     """
     StandarizationTransformator normalizes our columns
 
@@ -41,9 +41,9 @@ class StandarizationTransformator(Transformator):
     def __init__(self):
         pass
 
-    def transform(data,columns):
+    def transform(self,data,columns):
         for c in columns:
-            data[c] = (data[c]-np.mean)/np.std(data[c])
+            data[c] = (data[c]-np.mean(data[c]))/np.std(data[c])
         return data
 
 
@@ -58,7 +58,7 @@ class NormalizationTransformator(Transformator):
 
 
 
-    def transform(data,columns):
+    def transform(self,data,columns):
         for c in columns:
             min_value = min(data[c])
             max_value = max(data[c])
@@ -80,7 +80,7 @@ class Square_Transformator(Transformator):
         transform(data,columns): DataFrame of interest and nromalized with columns
     """
 
-    def transform(df,column_name:str):
+    def transform(self, df,column_name:str):
         df[column_name] = np.square(df[column_name])
         return df
     

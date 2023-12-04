@@ -15,7 +15,7 @@ setup(
     name='used_car_prediction_lib',
     version=used_car_prediction_lib.__version__,
     description='used_car_prediction_lib',
-    author=['ED','Matheiu','Luke Atazona','Wu Hangze'],
+    author=['Ed Monbiot','Mathieu Breier','Luke Atazona','Wu Hangze'],
     
     packages=find_packages(where='', exclude=['tests']),
     install_requires=get_requirements(),

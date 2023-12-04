@@ -1,3 +1,4 @@
+
 import transformator
 
 
@@ -14,7 +15,7 @@ class NormalizationTransformator(transformator.Transformator):
         pass
 
 
-    def transform(data,columns):
+    def transform(self, data,columns):
         for c in columns:
             min_value = min(data[c])
             max_value = max(data[c])

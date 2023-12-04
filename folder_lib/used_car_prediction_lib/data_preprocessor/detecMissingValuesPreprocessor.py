@@ -11,7 +11,7 @@
 #detect_missing_values(df)
 
 from . import preprocessor
-class detecMissingValuesProcessor(preprocessor.Preprocessor):
+class detectMissingValuesProcessor(preprocessor.Preprocessor):
     def preprocess(df, columns=[]):
         
         # Get the total number of missing values in the dataframe

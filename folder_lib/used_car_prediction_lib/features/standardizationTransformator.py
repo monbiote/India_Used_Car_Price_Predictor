@@ -1,6 +1,6 @@
 import transformator
 import numpy as np
-class StandarizationTransformator(transformator.Transformator):
+class StandardizationTransformator(transformator.Transformator):
     """
     StandarizationTransformator normalizes our columns
 
@@ -11,7 +11,7 @@ class StandarizationTransformator(transformator.Transformator):
     def __init__(self):
         pass
 
-    def transform(data,columns):
+    def transform(self, data,columns):
         for c in columns:
-            data[c] = (data[c]-np.mean)/np.std(data[c])
+            data[c] = (data[c] - np.mean(data[c])) / np.std(data[c])
         return data
