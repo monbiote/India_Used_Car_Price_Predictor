@@ -4,3 +4,11 @@ pandas
 scipy
 matplotlib
 seaborn
+sklearn.model_selection
+sklearn.linear_model
+sklearn.metrics
+sklearn.impute
+sklearn.model_selection
+sklearn.pipeline
+sklearn.ensemble
+
