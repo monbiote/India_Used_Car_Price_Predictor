@@ -42,7 +42,7 @@ class Lasso_Regression_TrainModel(TrainModel):
     def __init__(self, alphas=[0, 1, 2, 3, 4, 5]):
         self.alphas = alphas
 
-    def lasso_regression(self, X_train, y_train, X_test, y_test):
+    def regression_process(self, X_train, y_train, X_test, y_test):
         lasso = Lasso(alpha=self.alphas)
         lasso.fit(X_train, y_train)
         
@@ -60,7 +60,7 @@ class Ridge_Regression_TrainModel(TrainModel):
     def __init__(self, alphas=[0.01, 0.5, 0.75, 1, 2]):  # Corrected spacing around the alphas
         self.alphas = alphas
         
-    def ridge_regression(self, X_train, y_train, X_test, y_test):
+    def regression_process(self, X_train, y_train, X_test, y_test):
         ridge = Ridge(alpha=self.alphas) 
         ridge.fit(X_train, y_train)
         
