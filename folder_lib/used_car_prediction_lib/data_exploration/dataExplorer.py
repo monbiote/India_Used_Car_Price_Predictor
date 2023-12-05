@@ -1,10 +1,10 @@
-from abc import ABCMeta,abstractclassmethod
+from abc import ABCMeta,abstractmethod
 from scipy.stats import shapiro
 from pandas.api.types import is_numeric_dtype
 
 class DataExplorer(metaclass = ABCMeta):
 
-    @abstractclassmethod
+    @abstractmethod
     def check(self, df, column_name=[]):
         return NotImplementedError
     

@@ -7,18 +7,18 @@ from pandas import DataFrame
 class FillProcessor(metaclass = ABCMeta):
 
     @abstractmethod
-    def fill(df, column_name):
+    def fill(self,df, column_name):
         return NotImplementedError
 
 
 
 class MeanFillProcessor(FillProcessor):
-    def fill(df, column_name):
+    def fill(self,df, column_name):
         df[column_name].fillna(df[column_name].mean(), inplace=True)
         return df
     
     # Handle outliers -> replace values with mean
-    def handle_outliers_mean(df, column_name:str):
+    def handle_outliers_mean(self,df, column_name:str):
         df_copy = df.copy()
         column_data = df_copy[[column_name]].values
         #numpy percentile
@@ -34,7 +34,7 @@ class MeanFillProcessor(FillProcessor):
 
 
 class DistributionFillProcessor(FillProcessor):
-    def fill(df, column_name):
+    def fill(self,df, column_name):
         distribution = df[column_name].dropna()
         missing_count = df[column_name].isnull().sum()
         #use numpy.random.choice
@@ -47,7 +47,7 @@ class KNNFillProcessor(FillProcessor):
         super().__init__()
         self.neighbors = neighbors
     
-    def fill(df, column_name):
+    def fill(self,df, column_name):
         imputer = KNNImputer()
         imputed_data = imputer.fit_transform(df)
         df_temp = DataFrame(imputed_data)

@@ -5,7 +5,7 @@ import pandas as pd
 class Encoder(metaclass = ABCMeta):
     
     @abstractmethod
-    def encoding_process(df, columns_to_encode):
+    def encoding_process(self,df, columns_to_encode):
         return NotImplementedError
 
 
@@ -25,7 +25,7 @@ class BinaryEncoder(Encoder):
 ####################child################   
 class CategoryOneHotEncoder(Encoder): 
     #function for categorical variables 
-    def encoding_process(df, columns_to_encode):
+    def encoding_process(self,df, columns_to_encode):
         df = pd.get_dummies(df, columns=columns_to_encode, drop_first=True)
         
         # Convert Boolean columns to integers (0s and 1s)

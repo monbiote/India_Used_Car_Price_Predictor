@@ -1,18 +1,12 @@
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
-from sklearn.impute import KNNImputer
 from sklearn.metrics import r2_score, mean_squared_error
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.linear_model import LinearRegression, Lasso, Ridge, LassoCV, RidgeCV
-from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import Lasso, Ridge, LassoCV, RidgeCV
 from sklearn.metrics import r2_score, mean_squared_error
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.model_selection import train_test_split
 
 from abc import ABCMeta, abstractmethod
-import pandas as pd
 import numpy as np
 
 ####################father################   
