@@ -1,9 +1,12 @@
 # Library for Used Car Prediction
 
 This library is built for used car prediction. The used car prediction process contains three procedures:
-1. Understand Data
+1.Data Preparation
+1. Data Cleaning
 2. Clean Data
-3. Compute Data
+3. Data Exploration
+4. Data Transformation
+5. Model
 
 We have deconstructed the related operations and constructed the functions accordingly, also removing duplications.
 
