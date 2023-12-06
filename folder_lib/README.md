@@ -1,42 +1,50 @@
-# Libray for used car prediction
+# Library for Used Car Prediction
 
- This is library build for used car prediction.
- used car prediction contains 3 procedures.
- understand data-> clean data-> compute data
+This library is built for used car prediction. The used car prediction process contains three procedures:
+1. Understand Data
+2. Clean Data
+3. Compute Data
 
-We therefore destruct the related operations and construct the functions accordingly, also removed duplications.
+We have deconstructed the related operations and constructed the functions accordingly, also removing duplications.
 
-Then, we refactory functions to classes and followed by <h3>principle from computing for data science class</h3>.
-data_read,data_exploration,data_process;features;model;
+Then, we refactored functions into classes and followed the **principles from the Computing for Data Science class**.
 
-our class principle: class is an object that contains functions and attributes
-our class is workers. workers have own abilities
-Examples:
- DataExplorer,DeleteProcessor,Tansformator,Modeltrainer
- DataExplorer.check()
- DeleteProcessor.delete()
- Tansformator.transform()
- Modeltrainer.train()
-each worker has own similiar workers: we, therefore, have Father-Child relationships.
-and then we extract same actions to execute unified function by appling abstract class.
-Examples:
-father-child relations:
- DataExplorer,RangeDataExplorer,NormalityDataExplorer,...
- DeleteProcessor,DropDeleteProcessor
- Tansformator,Normalization_Transformator,Log_Transformator
- Modeltrainer,Linear_Regression_ModelTrainer,Ridge_Regression_ModelTrainer
-abstract unified actions:
- DataExplorer.check()
- DeleteProcessor.delete()
- Tansformator.transform()
- Modeltrainer.train()
+## Modules
+The library consists of the following modules:
+- `data_read`
+- `data_exploration`
+- `data_process`
+- `features`
+- `model`
 
-also, we use \__init__ constructor in some cases that child class requires extra input
-Examples:
-child class Ridge_Regression_ModelTrainer:
-\__init__(self, alphas=[0.01, 0.5, 0.75, 1, 2]):  # Corrected spacing around the alphas
-        self.alphas = alphas
+## Class Principles
+Our class principle: a class is an object that contains functions and attributes. Our classes are like workers; each worker has its own abilities.
 
+### Examples:
+- `DataExplorer.check()`
+- `DeleteProcessor.delete()`
+- `Transformator.transform()`
+- `ModelTrainer.train()`
 
+Each worker has similar workers; therefore, we have Father-Child relationships. We also extract similar actions to execute unified functions by applying an abstract class.
 
-in the end there will be unittes.
+### Father-Child Relationships:
+- DataExplorer, RangeDataExplorer, NormalityDataExplorer, ...
+- DeleteProcessor, DropDeleteProcessor, ...
+- Transformator, Normalization_Transformator, Log_Transformator, ...
+- ModelTrainer, Linear_Regression_ModelTrainer, Ridge_Regression_ModelTrainer, ...
+
+### Abstract Unified Actions:
+- `DataExplorer.check()`
+- `DeleteProcessor.delete()`
+- `Transformator.transform()`
+- `ModelTrainer.train()`
+
+### Specialized Constructors
+We use the `__init__` constructor in some cases where a child class requires extra input.
+
+#### Example:
+Child class `Ridge_Regression_ModelTrainer`:
+```python
+def __init__(self, alphas=[0.01, 0.5, 0.75, 1, 2]):
+    self.alphas = alphas
