@@ -8,16 +8,16 @@ from abc import ABCMeta, abstractmethod
 import numpy as np
 
 ####################father################   
-class TrainModel(metaclass = ABCMeta):
+class ModelTrainer(metaclass = ABCMeta):
     
     @abstractmethod
-    def regression_process(self,X_train, y_train, X_test, y_test):
+    def train(self,X_train, y_train, X_test, y_test):
         return NotImplementedError
 
 ####################child################   
-class Linear_Regression_TrainModel(TrainModel):
+class Linear_Regression_ModelTrainer(ModelTrainer):
     
-	def regression_process(self,X_train, y_train, X_test, y_test):
+	def train(self,X_train, y_train, X_test, y_test):
 		linear = LinearRegression()
 		linear.fit(X_train, y_train)
 		y_pred = linear.predict(X_test)
@@ -29,12 +29,12 @@ class Linear_Regression_TrainModel(TrainModel):
 		r2 = r2_score(y_test, y_pred)   
 		return mse, rmse, mse_std, r2, y_pred
 
-class Lasso_Regression_TrainModel(TrainModel):
+class Lasso_Regression_ModelTrainer(ModelTrainer):
     
     def __init__(self, alphas=[0, 1, 2, 3, 4, 5]):
         self.alphas = alphas
 
-    def regression_process(self, X_train, y_train, X_test, y_test):
+    def train(self, X_train, y_train, X_test, y_test):
         lasso = Lasso(alpha=self.alphas)
         lasso.fit(X_train, y_train)
         
@@ -48,11 +48,11 @@ class Lasso_Regression_TrainModel(TrainModel):
         
         return mse, rmse, mse_std, r2, y_pred
 
-class Ridge_Regression_TrainModel(TrainModel):
+class Ridge_Regression_ModelTrainer(ModelTrainer):
     def __init__(self, alphas=[0.01, 0.5, 0.75, 1, 2]):  # Corrected spacing around the alphas
         self.alphas = alphas
         
-    def regression_process(self, X_train, y_train, X_test, y_test):
+    def train(self, X_train, y_train, X_test, y_test):
         ridge = Ridge(alpha=self.alphas) 
         ridge.fit(X_train, y_train)
         

@@ -44,7 +44,6 @@ class DistributionFillProcessor(FillProcessor):
 
 class KNNFillProcessor(FillProcessor):
     def __init__(self,neighbors=10):
-        super().__init__()
         self.neighbors = neighbors
     
     def fill(self,df, column_name):

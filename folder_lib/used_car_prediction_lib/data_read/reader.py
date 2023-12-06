@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 
 class Reader(metaclass = ABCMeta):
-    
+
     @abstractmethod
     def read(self,file_path):
         return NotImplementedError
@@ -17,10 +17,10 @@ class CSVReader(Reader):
         df = read_csv(file_path)
         # Return the DataFrame
         return df
-    
-    def split_df(self,df,trainSize=0.7):
+
+    def split_df(self,X,y,test_size=0.3, random_state=123):
         #split with test size
-        train_data,test_data = train_test_split(df, trainSize)
-        return train_data,test_data
+        X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=test_size, random_state=random_state)
+        return X_train, X_test, y_train, y_test
 
  ####################child##################   

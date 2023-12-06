@@ -8,7 +8,7 @@ class Transformator(metaclass = ABCMeta):
         return NotImplementedError
     
 
-class  Scaling_Normalization_Transformator(Transformator):
+class  Normalization_Transformator(Transformator):
     """
     NormalizationTransformator normalizes our columns
 
@@ -22,7 +22,7 @@ class  Scaling_Normalization_Transformator(Transformator):
         return df
 
 
-class Scaling_Standardization_Transformator(Transformator):
+class Standardization_Transformator(Transformator):
     """
     StandarizationTransformator standardalizes our columns
 

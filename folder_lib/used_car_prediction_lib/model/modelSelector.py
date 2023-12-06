@@ -1,15 +1,15 @@
-from .ModelCrossValidation import Lasso_Regression_ModelCrossValidator, Ridge_Regression_ModelCrossValidator, Gradient_Boosting_Regression_ModelCrossValidator
-from .TrainModel import Linear_Regression_TrainModel
+from .modelCrossValidator import Lasso_Regression_ModelCrossValidator, Ridge_Regression_ModelCrossValidator, Gradient_Boosting_Regression_ModelCrossValidator
+from .modelTrainer import Linear_Regression_ModelTrainer
 
 
-class BestModel:
+class ModelSelector:
 
     # Function that runs every model
-    def best_model(X_train, y_train, X_test, y_test):
-        lr = Linear_Regression_TrainModel()
+    def select_best_model(self,X_train, y_train, X_test, y_test):
+        lr = Linear_Regression_ModelTrainer()
         
         # Linear Regression
-        linear_mse, linear_rmse,_, linear_r2, _ = lr.regression_process(X_train, y_train, X_test, y_test)
+        linear_mse, linear_rmse,_, linear_r2, _ = lr.train(X_train, y_train, X_test, y_test)
         print(f"Linear Regression MSE: {linear_mse:.3f} and RMSE:{linear_mse:.3f}  with an R2 of {linear_r2:.3f}")
         
         # Lasso Model
@@ -18,7 +18,7 @@ class BestModel:
         
         # Lasso_cv Model
         larcv = Lasso_Regression_ModelCrossValidator()
-        lasso_cv_mse, lasso_cv_rmse, y_pred, lasso_cv_r2, best_alpha= larcv.regressing_process_cv(X_train, y_train, X_test, y_test)
+        lasso_cv_mse, lasso_cv_rmse, y_pred, lasso_cv_r2, best_alpha= larcv.train_validate(X_train, y_train, X_test, y_test)
         print(f"Lasso Model with Cross Validation MSE: {lasso_cv_mse:.3f} and RMSE:{lasso_cv_rmse:.3f} with an R2 of {lasso_cv_r2:.3f} (alpha={best_alpha:.3f})")
         
         # Ridge Model
@@ -27,7 +27,7 @@ class BestModel:
         
         # Ridge_cv Model
         rircv = Ridge_Regression_ModelCrossValidator()
-        ridge_cv_mse, ridge_cv_rmse,y_pred, ridge_cv_r2, best_alpha = rircv.regressing_process_cv(X_train, y_train, X_test, y_test)
+        ridge_cv_mse, ridge_cv_rmse,y_pred, ridge_cv_r2, best_alpha = rircv.train_validate(X_train, y_train, X_test, y_test)
         print(f"Ridge Model with Cross Validation MSE: {ridge_cv_mse:.3f} and RMSE:{ridge_cv_rmse:.3f} with an R2 of {ridge_cv_r2:.3f} (alpha={best_alpha:.3f}))")
         
         # Gboost Model
@@ -36,7 +36,7 @@ class BestModel:
         
         # Gboost Model CV
         gbrcv = Gradient_Boosting_Regression_ModelCrossValidator()
-        gboost_cv_mse, gboost_cv_rmse, y_pred, gboost_cv_r2, best_params = gbrcv.regressing_process_cv(X_train, y_train, X_test, y_test)
+        gboost_cv_mse, gboost_cv_rmse, y_pred, gboost_cv_r2, best_params = gbrcv.train_validate(X_train, y_train, X_test, y_test)
         print(f"Gradient Boosting Model with Cross Validation MSE: {gboost_cv_mse:.3f} and RMSE:{gboost_cv_rmse:.3f} with an R2 of {gboost_cv_r2:.3f} (hyperparamaters: {best_params}))")
         
         # Find the best model based on MSE

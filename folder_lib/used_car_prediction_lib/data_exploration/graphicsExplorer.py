@@ -3,16 +3,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ####################father################   
-class Graphics(metaclass = ABCMeta):
+class GraphicsExplorer(metaclass = ABCMeta):
     
     @abstractmethod
-    def plotting(df,columns):
+    def plot(df,columns):
         return NotImplementedError
 
 ####################child################   
-class BoxPlotsGraphics(Graphics): 
+class BoxPlotsGraphicsExplorer(GraphicsExplorer): 
 
-    def plotting(self,df, columns):
+    def plot(self,df, columns):
         fig, ax = plt.subplots(figsize=(10, 6))
         df.boxplot(column=columns, ax=ax)
         plt.title('Boxplot')
@@ -22,8 +22,8 @@ class BoxPlotsGraphics(Graphics):
         plt.show()
 
 ####################child################   
-class DistributionGraphics(Graphics): 
-    def plotting(self,df, columns):
+class DistributionGraphicsExplorer(GraphicsExplorer): 
+    def plot(self,df, columns):
         num_cols = len(columns)
         num_rows = (num_cols // 2) + (num_cols % 2)
         fig, axes = plt.subplots(num_rows, 2, figsize=(15, num_rows * 5))
@@ -40,8 +40,8 @@ class DistributionGraphics(Graphics):
         plt.show()
 
 ####################child################   
-class CorrelationMatrixGraphics(Graphics): 
-    def plotting(self,df, columns):
+class CorrelationMatrixGraphicsExplorer(GraphicsExplorer): 
+    def plot(self,df, columns):
         corr = df[columns].corr()
         plt.figure(figsize=(10, 8))
         heatmap = sns.heatmap(corr, annot=True, cmap='viridis', fmt=".2f")

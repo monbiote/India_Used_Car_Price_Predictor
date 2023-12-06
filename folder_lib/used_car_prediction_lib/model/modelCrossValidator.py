@@ -13,7 +13,7 @@ import numpy as np
 class ModelCrossValidator(metaclass = ABCMeta):
     
     @abstractmethod
-    def regressing_process_cv(X_train, y_train, X_test, y_test):
+    def train_validate(X_train, y_train, X_test, y_test):
         return NotImplementedError
 
 ####################child################   
@@ -23,7 +23,7 @@ class Lasso_Regression_ModelCrossValidator(ModelCrossValidator):
         self.cv = cv
 
     #Lasso Regression with Cross Validation
-    def regressing_process_cv(self, X_train, y_train, X_test, y_test):
+    def train_validate(self, X_train, y_train, X_test, y_test):
         alphas = np.logspace(-4, 4, 100)  # Define a range of alpha values for optimization
         
         lasso_cv = LassoCV(alphas=alphas, cv=self.cv)
@@ -51,7 +51,7 @@ class Ridge_Regression_ModelCrossValidator(ModelCrossValidator):
         self.cv = cv
 
     #Ridge Regression with Cross Validation
-    def regressing_process_cv(self, X_train, y_train, X_test,y_test):
+    def train_validate(self, X_train, y_train, X_test,y_test):
         alphas = np.logspace(-4, 4, 100)  # Define a range of alpha values for optimization
         
         ridge_cv = RidgeCV(alphas=alphas, cv=self.cv)
@@ -79,7 +79,7 @@ class Gradient_Boosting_Regression_ModelCrossValidator(ModelCrossValidator):
         self.cv = cv
 
     #Ridge Regression with Cross Validation
-    def regressing_process_cv(self, X_train, y_train, X_test, y_test):
+    def train_validate(self, X_train, y_train, X_test, y_test):
     
         print('This process might take a few minutes.')
         

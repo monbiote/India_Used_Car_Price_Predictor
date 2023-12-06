@@ -17,7 +17,6 @@ class RangeDataExplorer(DataExplorer):
 
 class NormalityDataExplorer(DataExplorer):
     def __init__(self, alpha=0.05):
-        super.__init__()
         self.alpha = alpha
 
     def check(self, df, column_name=[]):
