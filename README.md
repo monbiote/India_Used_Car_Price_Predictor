@@ -13,8 +13,25 @@ To install our library:
 You should then be able to import the functions from within the library (example: used_car_prediction_lib.data_read.reader, used_car_prediction_lib.data_process.deleteProcessor).
 
 
-
-
+### Library Structure "folder_lib"
+```
+folder_lib
+└───best_model_prediction
+│   │   
+│   │    (stores the dataset with the predicted values)
+│   
+└───folder2
+    │   file021.txt
+    │   file022.txt
+│   └───subfolder1
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+│   
+└───folder2
+    │   file021.txt
+    │   file022.txt
+```
 
 We constructed our whole project using classes that were placed in library structure that made the most sense to us. The objective of this was to create a clear library structure that would allow new collaborators to quickly understand our project and then be able to improve it simply.
 
