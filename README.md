@@ -12,8 +12,7 @@ To install our library:
 
 You should then be able to import the functions from within the library (example: used_car_prediction_lib.data_read.reader, used_car_prediction_lib.data_process.deleteProcessor).
 
-$ tree
-.
+
 ├── dir1
 │   ├── file11.ext
 │   └── file12.ext
