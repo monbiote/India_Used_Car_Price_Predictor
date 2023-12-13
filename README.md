@@ -6,7 +6,7 @@ This project evaluates multiple machine learning models and finds the best one t
 
 To install our library:
 
-(- create a virtual environment (conda: conda create --name name_of_environment python 3.12) and activate the environment (conda: conda activate name_of_environment)
+( create a virtual environment (conda: conda create --name name_of_environment python 3.12) and activate the environment (conda: conda activate name_of_environment)
 - locate your work directory to the library folder "folder_lib" (using terminal: cd path)
 - run in terminal "pip install -e." when located in the main library folder.
 
