@@ -4,4 +4,8 @@ pandas
 scipy
 matplotlib
 seaborn
+<<<<<<< HEAD
 warnings
+=======
+warnings
+>>>>>>> 2afa9834a494547a5ad87931a6a6013128e0aac3
