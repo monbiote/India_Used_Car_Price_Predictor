@@ -16,7 +16,7 @@ import numpy as np
 
 #########################  Quetion3 ##################################
 
-class TestPlaneFigure_subclasses(unittest.TestCase):
+class TestTransformator_subclasses(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
