@@ -14,7 +14,7 @@ You should then be able to import the functions from within the library (example
 
 
 ### Library Structure "folder_lib"
-
+```
 project
 │   README.md
 │   file001.txt    
@@ -31,7 +31,26 @@ project
 └───folder2
     │   file021.txt
     │   file022.txt
+```
 
+.
++-- _config.yml
++-- _drafts
+|   +-- begin-with-the-crazy-ideas.textile
+|   +-- on-simplicity-in-technology.markdown
++-- _includes
+|   +-- footer.html
+|   +-- header.html
++-- _layouts
+|   +-- default.html
+|   +-- post.html
++-- _posts
+|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
++-- _data
+|   +-- members.yml
++-- _site
++-- index.html
 
 We constructed our whole project using classes that were placed in library structure that made the most sense to us. The objective of this was to create a clear library structure that would allow new collaborators to quickly understand our project and then be able to improve it simply.
 
