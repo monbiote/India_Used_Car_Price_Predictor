@@ -14,7 +14,7 @@ You should then be able to import the functions from within the library (example
 
 
 # folder_lib
-
+*
 ├── src
 │   ├── controller
 │   │   ├── **/*.css
@@ -32,7 +32,7 @@ You should then be able to import the functions from within the library (example
 ├── package.json
 ├── package-lock.json 
 └── .gitignore
-
+*
 We constructed our whole project using classes that were placed in library structure that made the most sense to us. The objective of this was to create a clear library structure that would allow new collaborators to quickly understand our project and then be able to improve it simply.
 
 This README file birefly summarizes our methodology and motivates the library structure we have build so far, while also showcasing the resul we obtained. 
