@@ -22,18 +22,26 @@ folder_lib
     └────data_exploration
     │   └───dataExplorer.py
     │   │    └─class RangeDataExplorer
+    │   │    │   └─def check
     │   │    └─class NormalityDataExplorer
+    │   │    │   └─def check
     │   │    └─class MissingValuesDataExplorer
+    │   │    │   └─def check
     │   │    └─class OutliersDataExplorer
+    │   │        └─def check
     │   │   
     │   └───graphicsExplorer.py
     │        └─class BoxPlotsGraphicsExplorer
+    │        │   └─def plot
     │        └─class DistributionGraphicsExplorer
+    │        │   └─def plot
     │        └─class CorrelationMatrixGraphicsExplorer
+    │            └─def plot
     │
     └────data_process
     │   └───deleteProcessor.py
     │   │    └─class DropDeleteProcessor
+    │   │        └─def delete
     │   │   
     │   └───fillProcessor.py
     │        └─class MeanFillProcessor
