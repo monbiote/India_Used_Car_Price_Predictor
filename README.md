@@ -11,7 +11,7 @@ To install our library:
 - locate your work directory to the library folder "folder_lib" (using terminal: cd path)
 - run in terminal "pip install -e." when located in the main library folder.
 
-You should then be able to import the functions from the library (example: used_car_prediction_lib.data_read.reader, used_car_prediction_lib.data_process.deleteProcessor).
+You should then be able to import the functions from the library (example: import used_car_prediction_lib.data_read.reader, import used_car_prediction_lib.data_process.deleteProcessor).
 
 ### Library Structure "folder_lib"
 ```
