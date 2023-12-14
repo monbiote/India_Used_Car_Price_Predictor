@@ -13,13 +13,13 @@ class ModelSelector:
 
     # Function that runs every model
     def select_best_model(self,X_train, y_train, X_test, y_test):
-        lr = Linear_Regression_ModelTrainer()
         
         # Suppress warnings
         warnings.filterwarnings("ignore")
         
         # Models with Cross Validation below:
         # Linear Regression
+        lr = Linear_Regression_ModelTrainer()
         linear_mse, linear_rmse,_, linear_r2, linear_y_pred = lr.train(X_train, y_train, X_test, y_test)
         print(f"Linear Regression MSE: {linear_mse:.3f} and RMSE:{linear_mse:.3f}  with an R2 of {linear_r2:.3f}")
         
