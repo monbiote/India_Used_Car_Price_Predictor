@@ -115,7 +115,7 @@ We designed our entire project based on a library structure that seemed most log
 This README provides a brief overview of our approach, outlining the rationale behind our current library structure. It also offers recommendations and suggestions for potential enhancements to our project.
 
 ### Summary of the library
-- Within our library's initial folder, you'll find methods tailored  that can be used to perform comprehensive data exploration. These methods encompass various functionalities like assessing variable distribution normality, identifying missing values and outliers, and inspecting variable ranges. Additionally, this section offers tools for visualizing correlation matrices, boxplots, and distributions.
+- Within our library's initial folder, you'll find methods that can be used to perform comprehensive data exploration. These methods encompass various functionalities like assessing variable distribution normality, identifying missing values and outliers, and inspecting variable ranges. Additionally, this section offers tools for visualizing correlation matrices, boxplots, and distributions.
 
 - The data process folder hosts methods dedicated to manipulating datasets. These include procedures for removing variables, handling outliers, and filling missing values using distribution, mean, or k-nearest-neighbor techniques.
 
