@@ -1,4 +1,5 @@
 # Final Project-Used Car Predicton
+Luke Atazona, Mathieu Breier, Wu Hangze, Edward Monbiot
 
 This project evaluates multiple machine learning models and finds the best one to predict the prices of second hand cars in India. 
 
