@@ -1,8 +1,18 @@
-
+#if you want to test within class, import unittest and inheritance from it
 import unittest
-import pandas as pd
-import deleteProcessor as dp
 
+#pytest test with function start from head of test
+import pytest_cov
+
+import pandas as pd
+import used_car_prediction_lib.data_process.deleteProcessor as dp
+
+#unittest
+# with basic concepts of input and output
+#use expected output compare with output from tested function
+#assert if is wrong
+
+#########################  DeleteProcessor ##################################
 class TestDeleteProcessor(unittest.TestCase):
 
     def setUp(self):

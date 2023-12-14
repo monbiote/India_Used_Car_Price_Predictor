@@ -6,15 +6,15 @@ import pytest_cov
 
 import used_car_prediction_lib.features.transformator as tr
 
-
 import pandas as pd
 import numpy as np
+
 #unittest
 # with basic concepts of input and output
 #use expected output compare with output from tested function
 #assert if is wrong
 
-#########################  Quetion3 ##################################
+#########################  Transformator ##################################
 
 class TestTransformator_subclasses(unittest.TestCase):
 
@@ -30,24 +30,27 @@ class TestTransformator_subclasses(unittest.TestCase):
         # Creating a sample DataFrame
         self.df = pd.DataFrame({'col1': [1, 2, 3], 'col2': [4, 5, 6]})
 
+        self.square_transformator = tr.Square_Transformator()
+        self.normalization_transformator = tr.Normalization_Transformator()
+        self.standardization_transformator = tr.Standardization_Transformator()
+        self.log_transformator = tr.Log_Transformator()
     def tearDown(self):
         # Resetting the DataFrame to ensure isolation between tests
         self.df = None
 
-    #test Rectangle
+    #test square transformation
     def test_square_transformation(self):
-        square_transformator = tr.Square_Transformator()
-        squared_df = square_transformator.transform(self.df, 'col1')
+        
+        squared_df = self.square_transformator.transform(self.df, 'col1')
         expected_df = self.df.copy()
         expected_df['col1'] = np.square(self.df['col1'])
 
         # Check transformed DataFrame
         pd.testing.assert_frame_equal(squared_df, expected_df)
 
+    #test normalization transformation
     def test_normalization_transformation(self):
-        transformator = tr.Normalization_Transformator()
-        normalization_transformator = tr.Normalization_Transformator()
-        normalized_df = normalization_transformator.transform(self.df, 'col1')
+        normalized_df = self.normalization_transformator.transform(self.df, 'col1')
         
         # Calculating expected results
         col_min, col_max = self.df['col1'].min(), self.df['col1'].max()
@@ -58,10 +61,10 @@ class TestTransformator_subclasses(unittest.TestCase):
         # Check transformed DataFrame
         pd.testing.assert_frame_equal(normalized_df, expected_df)
 
+
+    #test standarization transformation
     def test_standardization_transformation(self):
-        transformator = tr.Standardization_Transformator()
-        standardization_transformator = tr.Standardization_Transformator()
-        standardized_df = standardization_transformator.transform(self.df, 'col1')
+        standardized_df = self.standardization_transformator.transform(self.df, 'col1')
 
         # Calculating expected results
         col_mean, col_std = self.df['col1'].mean(), self.df['col1'].std()
@@ -73,10 +76,9 @@ class TestTransformator_subclasses(unittest.TestCase):
         self.assertListEqual(standardized_df.columns.tolist(), expected_df.columns.tolist())
         pd.testing.assert_frame_equal(standardized_df, expected_df)
 
+    #test log transformation
     def test_log_transformation(self):
-        transformator = tr.Log_Transformator()
-        log_transformator = tr.Log_Transformator()
-        log_df = log_transformator.transform(self.df, 'col1')
+        log_df = self.log_transformator.transform(self.df, 'col1')
 
         # Calculating expected results
         expected_df = self.df.copy()

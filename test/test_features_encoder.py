@@ -1,9 +1,19 @@
-
+#if you want to test within class, import unittest and inheritance from it
 import unittest
+
+#pytest test with function start from head of test
+import pytest_cov
+
 import pandas as pd
 import numpy as np
-import encoder as en
+import used_car_prediction_lib.features.encoder as en
 
+#unittest
+# with basic concepts of input and output
+#use expected output compare with output from tested function
+#assert if is wrong
+
+#########################  Encoder ##################################
 class TestEncoder(unittest.TestCase):
 
     def setUp(self):
