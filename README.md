@@ -129,9 +129,6 @@ This README provides a brief overview of our approach, outlining the rationale b
 
 Our pipeline assemble the preprocessing, the feature engineering and finally the prediction step. 
 
-### Unit Test
-Our unit testing is summarized on the following html link: 
-
 ### Scaling our library/ Suggestions
 
 We have build our library in a way that would allow new contributers to simply modify and improve our library. To modify or improve any methods within the library, you can refer to the schema and the library summary provided above to locate the specific methods you wish to modify.
