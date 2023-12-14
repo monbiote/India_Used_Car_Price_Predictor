@@ -15,10 +15,10 @@ You should then be able to import the functions from within the library (example
 
 ### Library Structure "folder_lib"
 ```
-folder_lib
+**folder_lib**
 └─────best_model_prediction
-│       └─Predictions.csv (stores the dataset with the predicted values)
-└─────used_car_prediction_lib
+│       └─Predictions.csv (stores a dataset with the predicted values)
+└─────**used_car_prediction_lib** (library)
     └────data_exploration
     │   └───dataExplorer.py
     │   │    └─class RangeDataExplorer
