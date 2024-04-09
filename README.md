@@ -141,4 +141,21 @@ Features:
 
 Models/Metrics:
 - Multiple other predictions methods could be added to our modelselector.py file using the same structure as the other existing methods.The model outputs, such as the metrics, can be easily changed to any other desired performance metric that is not currently available.
-- If you decide to add or modify any model, please include the new metrics or/and model within the select_best_model method..  
+- If you decide to add or modify any model, please include the new metrics or/and model within the select_best_model method.
+
+### Results
+Linear Regression MSE: 442497139407.946 and RMSE:442497139407.946  with an R2 of 0.641
+Lasso Model with Cross Validation MSE: 442518703006.899 and RMSE:665220.793 with an R2 of 0.641 (alpha=31.257)
+Ridge Model with Cross Validation MSE: 442931371433.803 and RMSE:665530.894 with an R2 of 0.641 (alpha=0.521))
+Gradient Boosting Model with Cross Validation MSE: 232636185273.258 and RMSE:482323.735 with an R2 of 0.811 
+
+### Conclusion
+The best model is: Gradient Boosting with an MSE of 232636185273.258, RMSE of 482323.735 and an R2 of 0.811
+
+### Further Improvements
+Preprocessors:  Other imputation methods could be added within the fillprocessor.py file. 
+Features: Expand the techniques used within the transformator.py file. 
+Models/Metrics: Multiple other predictions methods could be added to our modelselector.py file. Used further statistical  performance metrics.
+Pipeline: To optimize our Python pipeline, we could consider encapsulating the features to leverage the sklearn pipeline technique. Designed fitting and transforming methods.
+
+
