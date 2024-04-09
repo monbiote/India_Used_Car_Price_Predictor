@@ -153,9 +153,16 @@ Gradient Boosting Model with Cross Validation MSE: 232636185273.258 and RMSE:482
 The best model is: Gradient Boosting with an MSE of 232636185273.258, RMSE of 482323.735 and an R2 of 0.811
 
 ### Further Improvements
-Preprocessors:  Other imputation methods could be added within the fillprocessor.py file. 
-Features: Expand the techniques used within the transformator.py file. 
-Models/Metrics: Multiple other predictions methods could be added to our modelselector.py file. Used further statistical  performance metrics.
-Pipeline: To optimize our Python pipeline, we could consider encapsulating the features to leverage the sklearn pipeline technique. Designed fitting and transforming methods.
+Preprocessors: 
+- Other imputation methods could be added within the fillprocessor.py file. 
+Features: 
+- Expand the techniques used within the transformator.py file. 
+Models/Metrics: 
+- Multiple other predictions methods could be added to our modelselector.py file..
+- Used further statistical  performance metrics.
+Pipeline
+- To optimize our Python pipeline, we could consider encapsulating the features to leverage the sklearn pipeline technique.
+- Designing fitting and transforming methods.
+
 
 
